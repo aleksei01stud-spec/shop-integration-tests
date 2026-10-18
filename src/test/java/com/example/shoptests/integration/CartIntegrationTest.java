@@ -19,7 +19,7 @@ class CartIntegrationTest extends ShopTestBase {
         cartService.removeItem(1L, laptop.id());
 
         double expected = 80000.0 * 5 * 1.20;
-        assertEquals(999999.0, cartService.calculateTotal(1L), 0.01);
+        assertEquals(expected, cartService.calculateTotal(1L), 0.01);
         assertEquals(1, cartService.getOrCreate(1L).getItems().size());
     }
 
